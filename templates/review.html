@@ -1,0 +1,64 @@
+{% extends "main.html"  %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+
+{% block contiainer %}
+
+<h1 style="text-align: center;">All available Venues in this site</h1>
+
+<h1>Completed Bookings</h1>
+<table class="GeneratedTable">
+    <thead>
+      <tr>
+        <th>Venue_name</th>
+        <th>Date</th>
+        <th>Guests count</th>
+        <th>Amount</th>
+        <th>Review</th>
+      </tr>
+    </thead>
+    {% for i in data %}
+    <tbody>
+      <tr>
+        <td>{{ i.venue_name}}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.NoofGuest }}</td>
+        <td>{{ i.Amount }} </td>
+        <td><a href="{% url 'feedback' i.id %}">Feed back</a></td>
+
+      </tr>      </tbody>
+    {% endfor %}
+  </table>
+  
+<!-- 
+{% for i in venues %}
+
+<div style="text-align: center;">
+<form action="" method="post">
+    {% csrf_token %}
+    <h3>venue name :{{i.venue_name}}</h3>
+    <br>
+    <p style="font-size: 2rem;">Rating: 
+
+    <select name="{{i.venue_name}}"  style="width: 100px;"  id="">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+
+        
+    </select>
+</p>
+
+    <br>
+<textarea name="comment" id="" cols="30" rows="10"> </textarea>
+<br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endfor  %} -->
+
+
+{% endblock %}

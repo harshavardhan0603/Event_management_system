@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+        body{
+            margin: 0%;
+            font-family: 'Open Sans';
+        }
+        .error{
+            text-align: center;
+            margin: 30px 0px;
+            color: red;
+        }
+    </style>
+</head>
+<body style="margin: 0%;">
+    {% include "nav.html"  %}
+    <div>
+
+        {% block contiainer %}
+
+        {% endblock %}
+        
+    </div>
+
+<div class="error">
+    {% for message in messages %}
+
+    {{ message }}
+
+    {% endfor %}
+</div>
+</body>
+</body>
+</html>

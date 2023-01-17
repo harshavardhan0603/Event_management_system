@@ -1,0 +1,56 @@
+<style>
+    .div{
+        max-width: 400px;
+        margin: auto;
+        margin-top: 50px;
+        text-align: center;
+        border: 3px solid gray;
+        padding: 40px 0px 20PX;
+        border-radius: 30px;
+    }
+
+    label{
+        font-size: 22px;
+    }
+
+    input{
+        width: 300px;
+        padding: 10px 20px;
+        margin: 15px 0px;
+    }
+
+    button{
+        border-radius: 50px;
+    }
+
+    input:focus{
+        outline: none;
+    }
+
+    p{
+        font-size: 35px;
+        text-align: center;
+    }
+</style>
+{% extends "home.html"  %}
+
+{% block contiainer %}
+<p>SIGN UP</p>
+<div class="div">
+    <form action="" method="post">
+        {% csrf_token %}
+    <label for="username">Username</label><br>
+    <input type="text" name="username" id="username">
+    <br>
+    <label for="password">Password</label><br>
+    <input type="password" name="password1" id="password">
+    <br>
+    <label for="password">Re Enter</label><br>
+    <input type="password" name="password2" id="password">
+    <br>
+    <input type="submit" value="Submit">
+    </form>
+</div>
+
+
+{% endblock %}

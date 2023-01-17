@@ -1,0 +1,52 @@
+
+{% extends "main.html"  %}
+
+{% block contiainer %}
+<style>
+    table.GeneratedTable {
+      width: 100%;
+      background-color: #ffffff;
+      border-collapse: collapse;
+      border-width: 2px;
+      border-color: #ffcc00;
+      border-style: solid;
+      color: #000000;
+    }
+    
+    table.GeneratedTable td, table.GeneratedTable th {
+      border-width: 2px;
+      border-color: #ffcc00;
+      border-style: solid;
+      padding: 3px;
+    }
+    
+    table.GeneratedTable thead {
+      background-color: #ffcc00;
+    } 
+    </style>
+
+    <table class="GeneratedTable">
+      <thead>
+        <tr>
+          <th>Venue_name</th>
+          <th>Date</th>
+          <th>Guests count</th>
+          <th>Amount</th>
+          <th>Edit_booking</th>
+        </tr>
+      </thead>
+      {% for i in hist %}
+      <tbody>
+        <tr>
+          <td>{{ i.venue_name}}</td>
+          <td>{{ i.date }}</td>
+          <td>{{ i.NoofGuest }}</td>
+          <td>{{ i.Amount }} </td>
+          <td><a href="{% url 'update' i.id %}">Edit here</a><br><a href="{% url 'delete' i.id %}">CANCEL BOOKING</a>
+          <br><a href="{% url 'receipt' i.id %}">Receipt</a></td>
+
+
+        </tr>      </tbody>
+      {% endfor %}
+
+    {% endblock %}

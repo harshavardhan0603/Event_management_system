@@ -1,0 +1,39 @@
+<style>
+    nav{
+        display: flex;
+        justify-content: center;
+        background-color: gray;
+        
+        /* position: fixed;
+        top: 0;
+        width: 100%; */
+    }
+    
+    nav > a {
+        padding: 20px 30px;
+        font-size: 35x;
+        color: white;
+        transition: .5s;
+        text-decoration: none;
+    }
+
+    nav > a.active{
+        background-color: black;
+    }
+    
+    nav > a:hover {
+        background-color: black;
+    }
+</style>
+
+
+<nav>
+
+    <a href="#">Home</a> 
+    <a href="{% url 'book' %}">Book-Venue</a>
+    <a href="{% url 'hist' %}">Booking-History</a>
+    <a href="{% url 'view' %}">View-venue</a>
+    <a href="{% url 'review' %}">Review-ven</a>
+    <a href="{% url 'logout' %}">Logout</a>
+
+</nav>

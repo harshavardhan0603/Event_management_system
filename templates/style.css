@@ -1,0 +1,12 @@
+.nav{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.nav > a {
+    margin: 15px 30px;
+    font-size: 35x;
+    color: white;
+
+}

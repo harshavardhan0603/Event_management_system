@@ -1,0 +1,113 @@
+<style>
+label{
+    font-size: 18px;
+}
+
+.book__venue{
+    max-width: 400px;
+    margin: auto;
+    margin-top: 40px;
+    border: 3px solid gray;
+    border-radius: 40px;
+    padding: 50px ;
+
+
+}
+
+input, select{
+    float: right;
+}
+
+</style>
+
+
+{% extends "main.html"  %}
+
+{% block contiainer %}
+
+<div class="book__venue">
+<form action="" method="post">
+    {% csrf_token %}
+
+    <label for="event">Event Type</label>
+    <select name="event" id="event" required>
+    
+        <option value=0>Marriage</option>
+        <option value=1>Birthday Party</option>
+        <option value=2>Anniversary Party</option>
+        <option value=3>Farwell Party</option>
+        <option value=4>College events</option>
+    </select>
+    <br>
+    <label for="date">Date:</label>
+    <input type="date" name="date" id="date" required>
+    <br>
+    
+    <label for="guest">Number of Guest:</label>
+    <input type="number" id="guest" name = "guest" required>
+    <br>
+    
+<label for="venue">venue</label>
+<select name="venue" id="venue">
+{% for i in venues %}
+    <option value= {{ i.venue_name }}>{{ i.venue_name }} </option>
+{% endfor %}
+</select>
+
+<br>
+<label for="breakfast">Break-fast</label>
+<select name="breakfast" id="breakfast">
+    <option value=0>Not Required</option>
+    <option value=1>Normal</option>
+    <option value=2>Delux</option>
+    <option value=3>Royal</option>
+</select><br>
+
+<label for="lunch">Lunch</label>
+<select name="lunch" id="lunch">
+    <option value=0>Not Required</option>
+    <option value=1>Normal</option>
+    <option value=2>Delux</option>
+    <option value=3>Royal</option>
+</select><br>
+
+<label for="dinner">Dinner:</label>
+<select name="dinner" id="dinner">
+    <option value=0>Not Required</option>
+    <option value=1>Normal</option>
+    <option value=2>Delux</option>
+    <option value=3>Royal</option>
+</select>
+
+<br>
+<label for="n"> Tea and Snacks
+    <input type="radio"  name="Tea and Snacks"  value=1 id="n" required>
+    </label>
+    
+    <br>
+    <label for="nv"> Non- Veg
+    <input type="radio"  name="Nonveg"  value=0 id="nv" required>
+    </label>
+    <br>
+    <label for="v"> Veg
+    <input type="radio" name="Nonveg" value=1 id ="v" >
+    </label>
+    
+    
+    
+    <br>
+    
+    <label for="dec">Decoration:</label> 
+    <select name="decoration" id="dec">
+        <option value=1>Normal</option>
+        <option value=2>Delux</option>
+        <option value=3>Royal</option>
+    </select>
+
+
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</div>
+
+{% endblock %}

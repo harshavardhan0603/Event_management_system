@@ -1,0 +1,32 @@
+<style>
+    nav{
+        display: flex;
+        justify-content: center;
+        background-color: gray;
+    }
+    
+    nav > a {
+        padding: 20px 30px;
+        font-size: 35x;
+        color: white;
+        transition: .5s;
+        text-decoration: none;
+    }
+
+    nav > a.active {
+        background-color: black;
+    }
+    
+    nav > a:hover {
+        background-color: black;
+    }
+</style>
+
+<nav>
+
+    <a href="{% url 'home' %}">Home</a> 
+    <a href="{% url 'contact' %}">Contact-Us</a>
+    <a href="{% url 'signup' %}">Sign-Up</a>
+    <a href="{% url 'login' %}">Log-IN </a>
+
+</nav>  
